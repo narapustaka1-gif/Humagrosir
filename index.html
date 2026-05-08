@@ -73,6 +73,81 @@ color:#4caf50;
 }
 
 .hero{
+padding:0;
+position:relative;
+overflow:hidden;
+}
+
+.slider{
+position:relative;
+width:100%;
+height:100vh;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100vh;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:0 8%;
+opacity:0;
+transition:1s ease;
+}
+
+.slide.active{
+opacity:1;
+z-index:1;
+}
+
+.overlay-content{
+max-width:800px;
+color:white;
+animation:fadeUp 1s ease;
+}
+
+.overlay-content h1{
+font-size:clamp(55px,8vw,95px);
+line-height:1;
+margin-bottom:25px;
+font-weight:700;
+letter-spacing:-2px;
+}
+
+.overlay-content p{
+font-size:20px;
+line-height:1.9;
+margin-bottom:35px;
+max-width:650px;
+color:#f2f2f2;
+}
+
+.slider-nav{
+position:absolute;
+bottom:40px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:12px;
+z-index:10;
+}
+
+.dot{
+width:14px;
+height:14px;
+border-radius:50%;
+background:rgba(255,255,255,0.5);
+transition:0.3s;
+}
+
+.dot.active{
+background:white;
+transform:scale(1.2);
+}
+
+.hero{
 min-height:100vh;
 display:flex;
 align-items:center;
@@ -337,19 +412,38 @@ margin-top:20px;
 
 <section class="hero">
 
-<div class="hero-text">
+<div class="slider">
+
+<div class="slide active" style="background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');">
+<div class="overlay-content">
 <h1>Supplier Sayur Modern untuk Bisnis Anda</h1>
-
-<p>
-HumaGrosir.id menghadirkan sayur segar, harga grosir terbaik, dan distribusi cepat untuk kebutuhan rumah tangga, cafe, restoran, hingga reseller.
-</p>
-
+<p>Produk segar berkualitas dengan sistem distribusi cepat dan harga grosir terbaik.</p>
 <a href="#katalog" class="btn">Lihat Katalog</a>
-<a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+</div>
 </div>
 
-<div class="hero-image">
-<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop">
+<div class="slide" style="background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1516594798947-e65505dbb29d?q=80&w=1600&auto=format&fit=crop');">
+<div class="overlay-content">
+<h1>Fresh Product Every Day</h1>
+<p>Dipilih langsung dari supplier terpercaya untuk menjaga kualitas terbaik.</p>
+<a href="#tentang" class="btn">Tentang Kami</a>
+</div>
+</div>
+
+<div class="slide" style="background-image:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=1600&auto=format&fit=crop');">
+<div class="overlay-content">
+<h1>Harga Grosir Lebih Kompetitif</h1>
+<p>Cocok untuk rumah tangga, cafe, restoran, dan reseller modern.</p>
+<a href="#kontak" class="btn">Hubungi Admin</a>
+</div>
+</div>
+
+<div class="slider-nav">
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
 </div>
 
 </section>
@@ -442,5 +536,28 @@ Hubungi Admin
 WhatsApp
 </a>
 
+<script>
+
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+
+function showSlide(index){
+slides.forEach(slide => slide.classList.remove('active'));
+dots.forEach(dot => dot.classList.remove('active'));
+
+slides[index].classList.add('active');
+dots[index].classList.add('active');
+}
+
+setInterval(()=>{
+currentSlide++;
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+showSlide(currentSlide);
+},5000);
+
+</script>
 </body>
 </html>
