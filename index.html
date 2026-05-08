@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HumaGrosir.id</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f7faf7;
+color:#1d1d1d;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.92);
+backdrop-filter:blur(12px);
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+}
+
+.logo span:nth-child(1){
+color:#4caf50;
+}
+
+.logo span:nth-child(2){
+color:#56b8f0;
+}
+
+.logo span:nth-child(3){
+color:#111;
+}
+
+nav{
+display:flex;
+gap:30px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#4caf50;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:130px 8%;
+gap:60px;
+background:
+linear-gradient(to right,#f7faf7,#edf8ed);
+}
+
+.hero-text{
+flex:1;
+animation:fadeUp 1s ease;
+}
+
+.hero-text h1{
+font-size:clamp(55px,8vw,95px);
+line-height:1;
+margin-bottom:25px;
+color:#1d1d1d;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+max-width:650px;
+color:#555;
+margin-bottom:35px;
+}
+
+.hero-image{
+flex:1;
+position:relative;
+animation:float 5s ease-in-out infinite;
+}
+
+.hero-image img{
+width:100%;
+border-radius:35px;
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
+}
+
+.btn{
+display:inline-block;
+padding:18px 35px;
+background:#4caf50;
+color:white;
+text-decoration:none;
+border-radius:16px;
+font-weight:600;
+transition:0.3s;
+margin-right:15px;
+}
+
+.btn:hover{
+transform:translateY(-6px);
+}
+
+.btn-outline{
+background:white;
+color:#333;
+border:2px solid #ddd;
+}
+
+section{
+padding:110px 8%;
+}
+
+.title{
+font-size:clamp(42px,6vw,65px);
+margin-bottom:18px;
+color:#1d1d1d;
+}
+
+.desc{
+font-size:18px;
+line-height:1.9;
+max-width:850px;
+color:#666;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:28px;
+margin-top:60px;
+}
+
+.feature-card{
+background:white;
+padding:35px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,0.06);
+transition:0.4s;
+}
+
+.feature-card:hover{
+transform:translateY(-10px);
+}
+
+.feature-card h3{
+font-size:28px;
+margin-bottom:15px;
+color:#4caf50;
+}
+
+.feature-card p{
+line-height:1.8;
+color:#666;
+}
+
+.catalog{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+.product-card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.06);
+transition:0.4s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.product-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.product-info{
+padding:25px;
+}
+
+.product-info h3{
+font-size:28px;
+margin-bottom:12px;
+}
+
+.price{
+font-size:24px;
+font-weight:700;
+color:#4caf50;
+margin-bottom:18px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 16px;
+background:#e8f8ea;
+color:#2e7d32;
+border-radius:100px;
+font-size:14px;
+font-weight:600;
+margin-bottom:18px;
+}
+
+.cta{
+background:linear-gradient(135deg,#4caf50,#56b8f0);
+padding:90px 8%;
+text-align:center;
+color:white;
+}
+
+.cta h2{
+font-size:clamp(42px,6vw,70px);
+margin-bottom:20px;
+}
+
+.cta p{
+font-size:18px;
+line-height:1.9;
+max-width:850px;
+margin:auto;
+margin-bottom:35px;
+}
+
+footer{
+background:#111;
+color:white;
+padding:45px;
+text-align:center;
+}
+
+.float-wa{
+position:fixed;
+bottom:25px;
+right:25px;
+padding:18px 24px;
+background:#25d366;
+color:white;
+text-decoration:none;
+border-radius:100px;
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:float 3s ease-in-out infinite;
+z-index:999;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:18px;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text p{
+margin:auto;
+margin-bottom:35px;
+}
+
+.hero-image{
+margin-top:20px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<span>Huma</span><span>Grosir</span><span>.id</span>
+</div>
+
+<nav>
+<a href="#tentang">Tentang</a>
+<a href="#katalog">Katalog</a>
+<a href="#kontak">Kontak</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Supplier Sayur Modern untuk Bisnis Anda</h1>
+
+<p>
+HumaGrosir.id menghadirkan sayur segar, harga grosir terbaik, dan distribusi cepat untuk kebutuhan rumah tangga, cafe, restoran, hingga reseller.
+</p>
+
+<a href="#katalog" class="btn">Lihat Katalog</a>
+<a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+</div>
+
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop">
+</div>
+
+</section>
+
+<section id="tentang">
+<h2 class="title">Tentang HumaGrosir.id</h2>
+
+<p class="desc">
+HumaGrosir.id adalah platform supplier sayur dan kebutuhan dapur modern yang menyediakan produk segar berkualitas dengan sistem distribusi cepat dan harga kompetitif.
+</p>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>Fresh Every Day</h3>
+<p>Produk dipilih setiap hari untuk menjaga kualitas dan kesegaran.</p>
+</div>
+
+<div class="feature-card">
+<h3>Harga Grosir</h3>
+<p>Harga kompetitif untuk rumah tangga, reseller, dan bisnis kuliner.</p>
+</div>
+
+<div class="feature-card">
+<h3>Fast Delivery</h3>
+<p>Pengiriman cepat dengan sistem pemesanan yang mudah.</p>
+</div>
+
+</div>
+</section>
+
+<section id="katalog">
+<h2 class="title">Produk Unggulan</h2>
+
+<div class="catalog">
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+<div class="badge">Fresh Product</div>
+<h3>Cabai Merah</h3>
+<div class="price">Rp40.000/kg</div>
+<a href="#" class="btn">Pesan Sekarang</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+<div class="badge">Best Seller</div>
+<h3>Tomat Segar</h3>
+<div class="price">Rp12.000/kg</div>
+<a href="#" class="btn">Pesan Sekarang</a>
+</div>
+</div>
+
+<div class="product-card">
+<img src="https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?q=80&w=1200&auto=format&fit=crop">
+
+<div class="product-info">
+<div class="badge">Premium</div>
+<h3>Kentang</h3>
+<div class="price">Rp15.000/kg</div>
+<a href="#" class="btn">Pesan Sekarang</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="cta" id="kontak">
+<h2>Siap Menjadi Supplier Andalan Bisnis Anda</h2>
+
+<p>
+Hubungi HumaGrosir.id sekarang dan dapatkan produk segar dengan harga terbaik setiap hari.
+</p>
+
+<a href="#" class="btn" style="background:white;color:#111;">
+Hubungi Admin
+</a>
+</section>
+
+<footer>
+<p>© 2026 HumaGrosir.id — All Rights Reserved.</p>
+</footer>
+
+<a href="#" class="float-wa">
+WhatsApp
+</a>
+
+</body>
+</html>
