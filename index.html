@@ -185,6 +185,8 @@ animation:float 5s ease-in-out infinite;
 }
 
 .hero-image img{
+animation:glow 4s infinite ease-in-out;
+
 width:100%;
 border-radius:35px;
 box-shadow:0 25px 60px rgba(0,0,0,0.12);
@@ -203,6 +205,8 @@ margin-right:15px;
 }
 
 .btn:hover{
+box-shadow:0 12px 30px rgba(76,175,80,0.25);
+
 transform:translateY(-6px);
 }
 
@@ -237,6 +241,8 @@ margin-top:60px;
 }
 
 .feature-card{
+animation:fadeCard 1s ease;
+
 background:white;
 padding:35px;
 border-radius:30px;
@@ -267,6 +273,8 @@ margin-top:60px;
 }
 
 .product-card{
+animation:fadeCard 1.2s ease;
+
 background:white;
 border-radius:28px;
 overflow:hidden;
@@ -353,6 +361,30 @@ animation:float 3s ease-in-out infinite;
 z-index:999;
 }
 
+@keyframes fadeCard{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes glow{
+0%{
+box-shadow:0 0 0 rgba(76,175,80,0.0);
+}
+50%{
+box-shadow:0 0 35px rgba(76,175,80,0.25);
+}
+100%{
+box-shadow:0 0 0 rgba(76,175,80,0.0);
+}
+}
+
 @keyframes fadeUp{
 from{
 opacity:0;
@@ -375,7 +407,165 @@ transform:translateY(0);
 
 header{
 flex-direction:column;
-gap:18px;
+gap:16px;
+padding:18px 5%;
+}
+
+.logo{
+font-size:26px;
+text-align:center;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:16px;
+}
+
+nav a{
+font-size:14px;
+}
+
+.hero{
+height:auto;
+}
+
+.slider,
+.slide{
+height:100vh;
+min-height:700px;
+}
+
+.slide{
+padding:120px 7% 80px;
+align-items:center;
+text-align:center;
+justify-content:center;
+}
+
+.overlay-content{
+max-width:100%;
+margin:auto;
+}
+
+.overlay-content h1{
+font-size:clamp(42px,12vw,62px);
+line-height:1.1;
+letter-spacing:-1px;
+}
+
+.overlay-content p{
+font-size:16px;
+line-height:1.8;
+max-width:100%;
+}
+
+.btn{
+display:inline-block;
+width:100%;
+max-width:320px;
+text-align:center;
+margin:10px auto;
+padding:16px 22px;
+font-size:15px;
+}
+
+.title{
+font-size:clamp(34px,10vw,50px);
+line-height:1.1;
+text-align:center;
+}
+
+.desc{
+font-size:16px;
+text-align:center;
+}
+
+.features,
+.catalog{
+grid-template-columns:1fr;
+}
+
+.feature-card,
+.product-card{
+border-radius:24px;
+}
+
+.product-card img{
+height:220px;
+}
+
+.product-info h3{
+font-size:24px;
+}
+
+.price{
+font-size:22px;
+}
+
+.cta{
+padding:80px 7%;
+}
+
+.cta h2{
+font-size:clamp(34px,10vw,52px);
+line-height:1.1;
+}
+
+.cta p{
+font-size:16px;
+}
+
+footer{
+padding:35px 20px;
+font-size:14px;
+}
+
+.float-wa{
+bottom:18px;
+right:18px;
+padding:14px 18px;
+font-size:14px;
+}
+
+.slider-nav{
+bottom:25px;
+}
+
+.dot{
+width:12px;
+height:12px;
+}
+
+}
+
+@media(max-width:500px){
+
+section{
+padding:80px 6%;
+}
+
+.overlay-content h1{
+font-size:38px;
+}
+
+.overlay-content p{
+font-size:15px;
+}
+
+.feature-card,
+.product-info{
+padding:22px;
+}
+
+.product-card img{
+height:200px;
+}
+
+.btn{
+font-size:14px;
+}
+
 }
 
 .hero{
@@ -558,6 +748,29 @@ currentSlide = 0;
 showSlide(currentSlide);
 },5000);
 
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity='1';
+entry.target.style.transform='translateY(0px)';
+}
+});
+},{threshold:0.2});
+
+document.querySelectorAll('.feature-card,.product-card').forEach((el)=>{
+el.style.opacity='0';
+el.style.transform='translateY(40px)';
+el.style.transition='all 1s ease';
+observer.observe(el);
+});
+
+const floatWA = document.querySelector('.float-wa');
+window.addEventListener('scroll',()=>{
+floatWA.style.transform=`translateY(${Math.sin(window.scrollY * 0.01) * 4}px)`;
+});
+
 </script>
+
 </body>
 </html>
