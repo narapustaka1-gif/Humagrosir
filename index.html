@@ -1,285 +1,564 @@
-export default function HumaGrosirPremium() {
-  const products = [
-    {
-      name: 'Cabai Merah Premium',
-      price: 'Rp42.000/kg',
-      image:
-        'https://images.unsplash.com/photo-1583663848850-46af132dc08e?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      name: 'Tomat Fresh Market',
-      price: 'Rp14.000/kg',
-      image:
-        'https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      name: 'Kentang Organik',
-      price: 'Rp18.000/kg',
-      image:
-        'https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop',
-    },
-  ]
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HumaGrosir.id</title>
 
-  const stats = [
-    {
-      value: '250+',
-      label: 'Partner Supplier',
-    },
-    {
-      value: '10K+',
-      label: 'Pengiriman Bulanan',
-    },
-    {
-      value: '98%',
-      label: 'Customer Satisfaction',
-    },
-  ]
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  return (
-    <div className="min-h-screen bg-[#f5f7f4] text-slate-900 overflow-hidden">
-      <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/20 bg-white/60 backdrop-blur-2xl">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-10 py-5">
-          <h1 className="text-2xl md:text-3xl font-black tracking-tight">
-            <span className="text-green-600">Huma</span>
-            <span className="text-sky-500">Grosir</span>
-            <span>.id</span>
-          </h1>
+  <style>
 
-          <div className="hidden md:flex gap-8 text-sm font-medium text-slate-700">
-            <a href="#tentang" className="hover:text-green-600 transition">
-              Tentang
-            </a>
-            <a href="#produk" className="hover:text-green-600 transition">
-              Produk
-            </a>
-            <a href="#supplier" className="hover:text-green-600 transition">
-              Supplier
-            </a>
-            <a href="#kontak" className="hover:text-green-600 transition">
-              Kontak
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop"
-            alt="Vegetables"
-            className="w-full h-full object-cover scale-105 animate-pulse"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-32 pb-20 w-full">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white text-sm mb-8 animate-bounce">
-              Premium Vegetable Marketplace
-            </div>
-
-            <h2 className="text-5xl md:text-8xl font-black leading-none tracking-tight text-white">
-              Fresh Market
-              <br />
-              Modern Platform
-            </h2>
-
-            <p className="mt-8 text-lg md:text-xl text-slate-200 leading-9 max-w-2xl">
-              HumaGrosir.id menghadirkan supplier sayur modern dengan harga grosir realtime, distribusi cepat, dan pengalaman marketplace premium untuk bisnis kuliner masa kini.
-            </p>
-
-            <div className="mt-10 flex flex-wrap gap-4">
-              <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-400 text-white font-semibold shadow-2xl hover:scale-105 transition duration-500">
-                Lihat Katalog
-              </button>
-
-              <button className="px-8 py-4 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl text-white hover:bg-white/20 transition duration-500">
-                Hubungi Supplier
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-          <div className="w-3 h-3 rounded-full bg-white animate-pulse" />
-          <div className="w-3 h-3 rounded-full bg-white/40" />
-          <div className="w-3 h-3 rounded-full bg-white/40" />
-        </div>
-      </section>
-
-      <section id="tentang" className="py-24 px-6 md:px-10">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative">
-            <div className="absolute -inset-5 bg-green-500/20 blur-3xl rounded-full" />
-
-            <img
-              src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=1400&auto=format&fit=crop"
-              alt="Market"
-              className="relative rounded-[2rem] h-[520px] w-full object-cover shadow-2xl border border-white"
-            />
-          </div>
-
-          <div>
-            <p className="uppercase tracking-[0.3em] text-green-600 text-sm font-semibold mb-4">
-              About Platform
-            </p>
-
-            <h3 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">
-              Supplier Sayur Modern untuk Bisnis Berkembang.
-            </h3>
-
-            <p className="mt-8 text-slate-600 text-lg leading-9">
-              Dibangun dengan konsep marketplace premium, HumaGrosir.id membantu distribusi bahan pangan menjadi lebih cepat, efisien, dan profesional melalui sistem digital modern.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
-              {stats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-3xl bg-white p-6 shadow-xl border border-slate-100 hover:-translate-y-2 transition duration-500"
-                >
-                  <h4 className="text-4xl font-black text-green-600">
-                    {item.value}
-                  </h4>
-
-                  <p className="mt-2 text-slate-500 text-sm leading-6">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="produk"
-        className="py-24 px-6 md:px-10 bg-gradient-to-b from-white to-slate-100"
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-16">
-            <div>
-              <p className="uppercase tracking-[0.3em] text-green-600 text-sm font-semibold mb-4">
-                Featured Products
-              </p>
-
-              <h3 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">
-                Produk Segar Pilihan
-              </h3>
-            </div>
-
-            <button className="px-7 py-4 rounded-2xl bg-black text-white hover:scale-105 transition duration-500 shadow-xl">
-              Semua Produk
-            </button>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {products.map((item) => (
-              <div
-                key={item.name}
-                className="group overflow-hidden rounded-[2rem] bg-white border border-slate-100 shadow-2xl hover:-translate-y-3 transition duration-700"
-              >
-                <div className="relative overflow-hidden h-72">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-
-                  <div className="absolute top-5 left-5 px-4 py-2 rounded-full bg-white/20 backdrop-blur-xl text-white text-sm border border-white/20">
-                    Fresh Today
-                  </div>
-                </div>
-
-                <div className="p-8">
-                  <h4 className="text-3xl font-black tracking-tight">
-                    {item.name}
-                  </h4>
-
-                  <p className="mt-3 text-slate-500 leading-8">
-                    Produk pilihan dengan kualitas premium dan harga grosir realtime.
-                  </p>
-
-                  <div className="mt-6 flex justify-between items-center">
-                    <span className="text-2xl font-black text-green-600">
-                      {item.price}
-                    </span>
-
-                    <button className="px-5 py-3 rounded-xl bg-green-600 text-white hover:bg-green-700 transition">
-                      Pesan
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="supplier" className="py-24 px-6 md:px-10">
-        <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden relative">
-          <img
-            src="https://images.unsplash.com/photo-1506617564039-2f3b650b7010?q=80&w=2000&auto=format&fit=crop"
-            alt="Farm"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-
-          <div className="relative z-10 px-8 md:px-20 py-24 text-white text-center">
-            <p className="uppercase tracking-[0.3em] text-green-400 text-sm font-semibold mb-4">
-              Trusted Supplier
-            </p>
-
-            <h3 className="text-4xl md:text-7xl font-black leading-tight tracking-tight">
-              Distribusi Modern.
-              <br />
-              Supply Lebih Cepat.
-            </h3>
-
-            <p className="mt-8 text-slate-300 text-lg leading-9 max-w-3xl mx-auto">
-              Dirancang untuk memenuhi kebutuhan restoran, cafe, reseller, dan pasar modern dengan sistem distribusi digital yang profesional.
-            </p>
-
-            <button className="mt-10 px-8 py-5 rounded-2xl bg-gradient-to-r from-green-500 to-emerald-400 text-white font-semibold shadow-2xl hover:scale-105 transition duration-500">
-              Mulai Kerjasama
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <section id="kontak" className="px-6 md:px-10 pb-24">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-          <div className="rounded-[2rem] bg-white p-10 shadow-2xl border border-slate-100 hover:-translate-y-2 transition duration-500">
-            <p className="text-slate-400 mb-3">WhatsApp</p>
-            <h4 className="text-2xl font-bold">+62 821 0000 0000</h4>
-          </div>
-
-          <div className="rounded-[2rem] bg-white p-10 shadow-2xl border border-slate-100 hover:-translate-y-2 transition duration-500">
-            <p className="text-slate-400 mb-3">Email</p>
-            <h4 className="text-2xl font-bold">hello@humagrosir.id</h4>
-          </div>
-
-          <div className="rounded-[2rem] bg-white p-10 shadow-2xl border border-slate-100 hover:-translate-y-2 transition duration-500">
-            <p className="text-slate-400 mb-3">Location</p>
-            <h4 className="text-2xl font-bold">Indonesia Market Hub</h4>
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-10 text-center text-slate-500 border-t border-slate-200 bg-white">
-        © 2026 HumaGrosir.id — Premium Marketplace Platform
-      </footer>
-
-      <a
-        href="#"
-        className="fixed bottom-6 right-6 px-6 py-4 rounded-full bg-green-500 text-white shadow-2xl hover:scale-110 transition duration-500 z-50"
-      >
-        WhatsApp
-      </a>
-    </div>
-  )
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
+
+body{
+background:#f5f7f4;
+color:#111827;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(18px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+}
+
+.logo span:nth-child(1){
+color:#22c55e;
+}
+
+.logo span:nth-child(2){
+color:#38bdf8;
+}
+
+nav{
+display:flex;
+gap:35px;
+}
+
+nav a{
+text-decoration:none;
+color:#111827;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#22c55e;
+}
+
+.hero{
+position:relative;
+height:100vh;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+background-size:cover;
+background-position:center;
+opacity:0;
+transition:1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.slide::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.2));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+height:100%;
+display:flex;
+align-items:center;
+padding:0 8%;
+}
+
+.hero-text{
+max-width:700px;
+animation:fadeUp 1s ease;
+}
+
+.badge{
+display:inline-block;
+padding:12px 20px;
+border-radius:100px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+color:white;
+margin-bottom:25px;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.hero-text h1{
+font-size:80px;
+line-height:0.95;
+color:white;
+font-weight:800;
+margin-bottom:30px;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+color:#e5e7eb;
+margin-bottom:40px;
+}
+
+.btn-group{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 35px;
+border-radius:18px;
+text-decoration:none;
+font-weight:600;
+transition:0.4s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+}
+
+.btn-primary{
+background:#22c55e;
+color:white;
+box-shadow:0 15px 35px rgba(34,197,94,0.3);
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+color:white;
+}
+
+.section{
+padding:120px 8%;
+}
+
+.section-title{
+font-size:60px;
+font-weight:800;
+line-height:1;
+margin-bottom:20px;
+}
+
+.section-desc{
+font-size:18px;
+line-height:1.9;
+color:#6b7280;
+max-width:800px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:70px;
+}
+
+.card{
+background:white;
+border-radius:35px;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.06);
+transition:0.5s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
+}
+
+.card-content{
+padding:30px;
+}
+
+.card-content h3{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.card-content p{
+line-height:1.9;
+color:#6b7280;
+}
+
+.price{
+margin-top:20px;
+font-size:28px;
+font-weight:800;
+color:#22c55e;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:70px;
+}
+
+.stat-box{
+background:white;
+padding:40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+.stat-box h2{
+font-size:55px;
+color:#22c55e;
+margin-bottom:10px;
+}
+
+.cta{
+margin:0 8% 100px;
+padding:100px 8%;
+border-radius:40px;
+background:linear-gradient(135deg,#111827,#1f2937);
+color:white;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.cta h2{
+font-size:70px;
+line-height:1;
+margin-bottom:25px;
+}
+
+.cta p{
+font-size:18px;
+line-height:1.9;
+max-width:850px;
+margin:auto;
+margin-bottom:40px;
+color:#d1d5db;
+}
+
+footer{
+background:#111827;
+padding:50px;
+text-align:center;
+color:white;
+}
+
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+background:#22c55e;
+padding:18px 24px;
+border-radius:100px;
+color:white;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 15px 35px rgba(34,197,94,0.3);
+animation:float 3s infinite ease-in-out;
+z-index:999;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:20px;
+padding:20px 5%;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.hero-text h1{
+font-size:50px;
+}
+
+.hero-text p{
+font-size:16px;
+}
+
+.section-title{
+font-size:42px;
+text-align:center;
+}
+
+.section-desc{
+text-align:center;
+font-size:16px;
+}
+
+.cta{
+margin:0 5% 80px;
+padding:70px 8%;
+}
+
+.cta h2{
+font-size:45px;
+}
+
+.btn{
+width:100%;
+}
+
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <span>Huma</span><span>Grosir</span>.id
+  </div>
+
+  <nav>
+    <a href="#">Beranda</a>
+    <a href="#">Produk</a>
+    <a href="#">Supplier</a>
+    <a href="#">Kontak</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2000&auto=format&fit=crop')"></div>
+
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1488459716781-31db52582fe9?q=80&w=2000&auto=format&fit=crop')"></div>
+
+  <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1506617564039-2f3b650b7010?q=80&w=2000&auto=format&fit=crop')"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+
+      <div class="badge">
+        Premium Vegetable Marketplace
+      </div>
+
+      <h1>
+        Fresh Market<br>
+        Modern Platform
+      </h1>
+
+      <p>
+        HumaGrosir.id menghadirkan supplier sayur modern dengan harga realtime,
+        distribusi cepat, dan pengalaman marketplace premium untuk bisnis masa kini.
+      </p>
+
+      <div class="btn-group">
+        <a href="#" class="btn btn-primary">Lihat Katalog</a>
+        <a href="#" class="btn btn-secondary">Hubungi Supplier</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    Supplier Sayur Modern
+  </h2>
+
+  <p class="section-desc">
+    Dibangun dengan konsep marketplace premium untuk distribusi bahan pangan modern,
+    cepat, dan profesional.
+  </p>
+
+  <div class="stats">
+
+    <div class="stat-box">
+      <h2>250+</h2>
+      <p>Partner Supplier</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>10K+</h2>
+      <p>Pengiriman Bulanan</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>98%</h2>
+      <p>Customer Satisfaction</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    Produk Pilihan
+  </h2>
+
+  <p class="section-desc">
+    Produk segar premium dengan harga grosir realtime.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1583663848850-46af132dc08e?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+        <h3>Cabai Merah</h3>
+
+        <p>
+          Cabai segar pilihan kualitas premium untuk kebutuhan pasar modern.
+        </p>
+
+        <div class="price">
+          Rp42.000/kg
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+        <h3>Tomat Fresh</h3>
+
+        <p>
+          Tomat segar dengan kualitas terbaik dan distribusi cepat.
+        </p>
+
+        <div class="price">
+          Rp14.000/kg
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop">
+
+      <div class="card-content">
+        <h3>Kentang Organik</h3>
+
+        <p>
+          Kentang premium untuk kebutuhan cafe dan restoran modern.
+        </p>
+
+        <div class="price">
+          Rp18.000/kg
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="cta">
+
+  <h2>
+    Distribusi Modern.<br>
+    Supply Lebih Cepat.
+  </h2>
+
+  <p>
+    HumaGrosir.id membantu bisnis kuliner mendapatkan bahan pangan
+    segar dengan sistem distribusi modern dan profesional.
+  </p>
+
+  <a href="#" class="btn btn-primary">
+    Mulai Kerjasama
+  </a>
+
+</section>
+
+<footer>
+  © 2026 HumaGrosir.id — Premium Marketplace Platform
+</footer>
+
+<a href="#" class="whatsapp">
+  WhatsApp
+</a>
+
+<script>
+
+const slides = document.querySelectorAll('.slide');
+
+let current = 0;
+
+function changeSlide(){
+
+slides[current].classList.remove('active');
+
+current = (current + 1) % slides.length;
+
+slides[current].classList.add('active');
+
+}
+
+setInterval(changeSlide,4000);
+
+</script>
+
+</body>
+</html>
